@@ -13,8 +13,13 @@ def test_exception():
         raise SensorException(e,sys)
 """
 if __name__ == '__main__': 
-    training_pipeline = TrainPipeline()
-    training_pipeline.run_pipeline()
+    try:
+        training_pipeline = TrainPipeline()
+        training_pipeline.run_pipeline()  
+    except Exception as e:
+        print(e)
+        logging.exception(e)
+    
     """training_pipeline_config = TrainingPipelineConfig() 
     data_ingestion_config = DataIngestionConfig(training_pipeline_config= training_pipeline_config)
     print(data_ingestion_config.__dict__)"""
