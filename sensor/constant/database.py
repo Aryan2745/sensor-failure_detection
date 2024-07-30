@@ -1,2 +1,2 @@
 DATABASE_NAME = "test" 
-COLLECTION_NAME = "Sensor"
+COLLECTION_NAME = "car"
