@@ -55,9 +55,9 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
           IMAGE_TAG: latest
         run: |
-          export DOCKER_BUILDKIT=1
-          docker buildx build --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG --push . 
-          #docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          
+          docker buildx build --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . 
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "IMAGE=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
           
           
