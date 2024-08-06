@@ -50,7 +50,14 @@ jobs:
 
       - name: Set outputs
         id: vars
-        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT 
+
+      - name: Debug Outputs
+        run: |
+              echo "Registry: ${{ steps.login-ecr.outputs.registry }}"
+              echo "Repository: ${{ env.ECR_REPOSITORY }}"
+              echo "SHA Short: ${{ steps.vars.outputs.sha_short }}"
+
 
       - name: Build and push
         id: build-and-push
