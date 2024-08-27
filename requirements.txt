@@ -8,5 +8,8 @@ imblearn
 xgboost 
 fastapi
 uvicorn 
-starlette
+starlette 
+seaborn 
+matplotlib 
+catboost
 -e .
